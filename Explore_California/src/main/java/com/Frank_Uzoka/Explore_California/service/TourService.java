@@ -10,7 +10,6 @@ import com.Frank_Uzoka.Explore_California.repo.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class TourService {
     private TourRepository tourRepository;
@@ -41,7 +40,7 @@ public class TourService {
                            String duration, String bullets,
                            String keywords, String tourPackageName, Difficulty difficulty, Region region ) {
         TourPackage tourPackage = tourPackageRepository.findByName(tourPackageName).orElseThrow(()->
-             new RuntimeException("Tour package does not exist: " + tourPackageName));
+                new RuntimeException("Tour package does not exist: " + tourPackageName));
 
         return tourRepository.save(new Tour(title, description,blurb, price, duration,
                 bullets, keywords, tourPackage, difficulty, region));

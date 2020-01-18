@@ -4,7 +4,6 @@ import com.Frank_Uzoka.Explore_California.repo.TourPackageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class TourPackageService {
     private TourPackageRepository tourPackageRepository;
@@ -39,4 +38,3 @@ public class TourPackageService {
         return tourPackageRepository.count();
     }
 }
-
