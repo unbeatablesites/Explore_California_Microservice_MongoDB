@@ -74,14 +74,14 @@ public class TourRatingController {
      * @param tourId tour identifier
      * @return Tuple of "average" and the average value.
      */
-    @GetMapping(path = "/average")
-    public Map<String, Double> getAverage(@PathVariable(value = "tourId") int tourId) {
-        verifyTour(tourId);
-        return Map.of("average",tourRatingRepository.findByPkTourId(tourId).stream()
-                .mapToInt(TourRating::getScore).average()
-                .orElseThrow(() ->
-                new NoSuchElementException("Tour has no Ratings")));
-    }
+//    @GetMapping(path = "/average")
+//    public Map<String, Double> getAverage(@PathVariable(value = "tourId") int tourId) {
+//        verifyTour(tourId);
+//        return Map.of("average",tourRatingRepository.findByPkTourId(tourId).stream()
+//                .mapToInt(TourRating::getScore).average()
+//                .orElseThrow(() ->
+//                new NoSuchElementException("Tour has no Ratings")));
+//    }
 
     /**
      * Update score and comment of a Tour Rating
